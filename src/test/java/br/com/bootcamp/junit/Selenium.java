@@ -1,3 +1,5 @@
+package br.com.bootcamp.junit;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -6,7 +8,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Random;
 
@@ -14,7 +18,7 @@ public class Selenium {
 
     // Criar instancia do driver do chrome
     private static WebDriver driver;
-    private WebDriverWait wait = new WebDriverWait(driver,100);
+    private static WebDriverWait wait;
 
 
     @BeforeAll
@@ -23,12 +27,12 @@ public class Selenium {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
 
         driver = new ChromeDriver();
+        wait = new WebDriverWait(driver,100);
         // Abrir Browser e acessar URL
         driver.get("https://automacaocombatista.herokuapp.com");
 
         // Maximinizando o Browser
         driver.manage().window().maximize();
-
 
         driver.findElement(By.xpath("//a[text()='Começar Automação Web']")).click();
     }
@@ -80,9 +84,24 @@ public class Selenium {
         driver.findElement(By.xpath("//input[@id='white']/following-sibling:: label")).click();
     }
 
+    @Test
+    public void select(){
+        driver.findElement(By.xpath("//a[text()='Busca de elementos']")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Dropdown e Select']")));
+        driver.findElement(By.xpath("//a[text()='Dropdown e Select']"));
+
+        WebElement listaSelecao = driver.findElement(By.xpath("//select[@id='dropdown']"));
+        Select listaDesenhoFavorito = new Select(listaSelecao);
+
+        listaDesenhoFavorito.selectByIndex(1);
+        listaDesenhoFavorito.selectByValue("3");
+        listaDesenhoFavorito.selectByVisibleText("Internet Explorer");
+
+    }
+/*
     @AfterAll
     public static void fecharBrowser(){
         // Fechando o navegador
         driver.quit();
-    }
+    }*/
 }
