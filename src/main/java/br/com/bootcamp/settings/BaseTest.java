@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseTest {
     protected static WebDriver webDriver;
-    protected static WebDriverWait waint;
+    protected static WebDriverWait wait;
 
     protected void initializeWebApplication(BrowserImp webApplication){
         if(webDriver != null){
@@ -14,7 +14,7 @@ public class BaseTest {
         }
         webDriver = webApplication.getDriver();
         webDriver.manage().window().maximize();
-        waint = new WebDriverWait(webDriver,60);
+        wait = new WebDriverWait(webDriver,60);
     }
 
     protected static void closeWeb(){

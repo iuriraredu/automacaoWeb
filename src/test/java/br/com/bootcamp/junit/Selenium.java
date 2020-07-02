@@ -1,5 +1,5 @@
 package br.com.bootcamp.junit;
-
+/*
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -13,9 +13,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Random;
-
+*/
 public class Selenium {
-
+/*
     // Criar instancia do driver do chrome
     private static WebDriver driver;
     private static WebDriverWait wait;
@@ -98,7 +98,7 @@ public class Selenium {
         listaDesenhoFavorito.selectByVisibleText("Internet Explorer");
 
     }
-/*
+
     @AfterAll
     public static void fecharBrowser(){
         // Fechando o navegador
