@@ -1,4 +1,4 @@
-package br.com.bootcamp.pages;
+package br.com.bootcamp.web.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +10,7 @@ public class HomePage {
         PageFactory.initElements(webDriver,this);
     }
 
-    @FindBy(xpath = "//input[@href='12345678']")
+    @FindBy(xpath = "//span[parent::a[@href='/me/']]")
     private WebElement btnTeste;
 
     public WebElement getBtnTeste() {

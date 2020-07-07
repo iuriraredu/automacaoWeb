@@ -10,9 +10,10 @@ import br.com.bootcamp.settings.BaseTest;
 @CucumberOptions(monochrome = true, dryRun = false,
         snippets = SnippetType.CAMELCASE,
         plugin = {"pretty","json:target/cucumber.json"},
-        features = {},glue = {
-        },
-        tags = {"@test-web","@app"})
+        features = {"./src/test/resources"},glue = {
+        "br.com.bootcamp.web.steps","br.com.bootcamp.settings",
+        "br.com.bootcamp.commons",},
+        tags = {"@web"})
 
 public class RunTest extends BaseTest {
 }

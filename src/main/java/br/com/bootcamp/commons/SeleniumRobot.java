@@ -1,6 +1,7 @@
 package br.com.bootcamp.commons;
 
 import br.com.bootcamp.settings.BaseTest;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,6 +15,12 @@ public class SeleniumRobot extends BaseTest {
     public void clicaBotaoJS(WebElement elemento){
         JavascriptExecutor js = (JavascriptExecutor)webDriver;
         js.executeScript("arguments[0].click();", elemento);
+    }
+
+    public void clicaBotaoPorTexto(String texto){
+        webDriver.findElement(By.xpath("//input[@value='"+texto+"']")).click();
+        //xpath = "//input[@value='Entrar']"
+
     }
 
     /**
