@@ -12,8 +12,9 @@ public class LoginFuncionalidade extends BaseTest {
         this.loginPage = new LoginPage(webDriver);
     }
 
-    public void preencheCredenciais(){
+    public void realizarLogin(){
         this.loginPage.getTxtEmail().sendKeys(Credentials.CADASTRADO.usuario());
         this.loginPage.getTxtPassWord().sendKeys(Credentials.CADASTRADO.senha());
+        this.loginPage.getBtnEntra().click();
     }
 }

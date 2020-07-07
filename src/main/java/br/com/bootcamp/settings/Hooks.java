@@ -12,9 +12,9 @@ public class Hooks extends BaseTest {
         initializeWebApplication(Browser.CHROME);
     }
 
-    @After(value = "@web")
+   /* @After(value = "@web")
     public void afterWeb(){
         System.out.println("Fechando Web");
         closeWeb();
-    }
+    }*/
 }

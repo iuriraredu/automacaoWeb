@@ -14,7 +14,7 @@ public class BaseTest {
         }
         webDriver = webApplication.getDriver();
         webDriver.manage().window().maximize();
-        webDriver.get("https://www.facebook.com/");
+        webDriver.get("https://www.facebook.com/profile");
 
         wait = new WebDriverWait(webDriver,60);
     }

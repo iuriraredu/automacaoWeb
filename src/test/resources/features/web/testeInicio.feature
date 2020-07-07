@@ -8,8 +8,9 @@
 
     @login @web
     Cenario: Realizar login na aplicação com usuário cadatrado
-      Dado preencho os dados de login com usuário "Cadastrado"
-      Quando clico em "Entrar"
-      Entao visualizo a tela inicial com o meu usuário logado
+      Dado realizo login com usuário "Cadastrado"
+      E acesso perfil clicando em "Iuri Ramos Reducino"
+      Quando exclui publicação
+      Então exibe mensagem "Sua publicação foi excluída."
 
 

@@ -11,9 +11,9 @@ public class HomePage {
     }
 
     @FindBy(xpath = "//span[parent::a[@href='/me/']]")
-    private WebElement btnTeste;
+    private WebElement linkMeuPerfil;
 
-    public WebElement getBtnTeste() {
-        return btnTeste;
+    public WebElement getLinkMeuPerfil() {
+        return linkMeuPerfil;
     }
 }

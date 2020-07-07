@@ -13,7 +13,7 @@ import br.com.bootcamp.settings.BaseTest;
         features = {"./src/test/resources"},glue = {
         "br.com.bootcamp.web.steps","br.com.bootcamp.settings",
         "br.com.bootcamp.commons",},
-        tags = {"@web"})
+        tags = {"@login"})
 
 public class RunTest extends BaseTest {
 }

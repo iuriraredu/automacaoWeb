@@ -13,6 +13,7 @@ public enum  Credentials implements CredentialsImp {
         public String senha () {
             return "";
         }
+
     };
 
 }

@@ -17,11 +17,18 @@ public class LoginPage {
     @FindBy(id = "pass")
     private WebElement txtPassWord;
 
+    @FindBy(xpath = "//input[@value='Entrar']")
+    private WebElement btnEntra;
+
     public WebElement getTxtEmail() {
         return txtEmail;
     }
 
     public WebElement getTxtPassWord() {
         return txtPassWord;
+    }
+
+    public WebElement getBtnEntra() {
+        return btnEntra;
     }
 }

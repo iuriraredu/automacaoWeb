@@ -17,12 +17,6 @@ public class SeleniumRobot extends BaseTest {
         js.executeScript("arguments[0].click();", elemento);
     }
 
-    public void clicaBotaoPorTexto(String texto){
-        webDriver.findElement(By.xpath("//input[@value='"+texto+"']")).click();
-        //xpath = "//input[@value='Entrar']"
-
-    }
-
     /**
      * Insere um texto no campo através de JavaScriptExecutor
      * @param elemento Insira o elemento onde você deseja preencher no campo
@@ -69,6 +63,7 @@ public class SeleniumRobot extends BaseTest {
         JavascriptExecutor js = (JavascriptExecutor)webDriver;
         js.executeScript("arguments[0].scrollIntoViews()", elemento);
     }
+
 
     /**
      * Realiza Scroll até o fim da página
@@ -122,5 +117,33 @@ public class SeleniumRobot extends BaseTest {
     public void selecionaItemListaPorValorJS(WebElement elemento, String value){
         Select lista = new Select(elemento);
         lista.selectByValue(value);
+    }
+
+    /**
+     * Espero o Elemento estar visivel na Tela
+     * @param elemento o elemento a ficar visivel
+     */
+    public void esperarElementoSerVisivel(WebElement elemento){
+        wait.until(ExpectedConditions.visibilityOf(elemento));
+    }
+
+    /**
+     * Mapeia e retorna um elemento pelo xpath
+     * @param xPath do elemento a ser mapeado
+     * @return o elemento mapeado
+     */
+    public WebElement mapearElemento (String xPath){
+        return webDriver.findElement(By.xpath(xPath));
+    }
+
+    /**
+     * Mapeia e retorna um elemento pelo xpath
+     * @param atributo a tag do elemento HTML que deseja mapear
+     * @param especificacao o atributo da tag
+     * @param valor o valor do atributo
+     * @return o elemento mapeado
+     */
+    public WebElement mapearElemento (String atributo, String especificacao, String valor){
+        return webDriver.findElement(By.xpath("//"+atributo+"["+especificacao+"='"+valor+"']"));
     }
 }
