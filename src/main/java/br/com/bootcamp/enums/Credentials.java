@@ -6,7 +6,7 @@ public enum  Credentials implements CredentialsImp {
     CADASTRADO {
         @Override
         public String usuario () {
-            return "";
+            return "iuriraredu";
         }
 
         @Override

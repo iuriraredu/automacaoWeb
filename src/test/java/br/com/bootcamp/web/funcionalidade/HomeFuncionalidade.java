@@ -15,7 +15,7 @@ public class HomeFuncionalidade extends BaseTest {
     }
 
     public void acessarPerfil(){
-        this.seleniumRobot.esperaElementoSerClicavelJS(this.homePage.getLinkMeuPerfil());
+        this.seleniumRobot.esperarElementoSerVisivel(this.homePage.getLinkMeuPerfil());
         this.homePage.getLinkMeuPerfil().click();
     }
 

@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.concurrent.TimeUnit;
+
 public class SeleniumRobot extends BaseTest {
     /**
      * Clicar em um botão através de JavaScriptExecutor
@@ -82,14 +84,6 @@ public class SeleniumRobot extends BaseTest {
     }
 
     /**
-     * Espera o elemento estar clicável na tela
-     * @param elemento
-     */
-    public void esperaElementoSerClicavelJS(WebElement elemento){
-        wait.until(ExpectedConditions.elementToBeClickable(elemento));
-    }
-
-    /**
      * Seleciona um intem na lista através do texto que está visivel na lista
      * @param elemento Elemento pai da lista de seleção (id da tag select)
      * @param textoVisivel Texto ao qual o comando deve clicar
@@ -128,6 +122,14 @@ public class SeleniumRobot extends BaseTest {
     }
 
     /**
+     * Espera o elemento estar clicável na tela
+     * @param elemento
+     */
+    public void esperaElementoSerClicavelJS(WebElement elemento){
+        wait.until(ExpectedConditions.elementToBeClickable(elemento));
+    }
+
+    /**
      * Mapeia e retorna um elemento pelo xpath
      * @param xPath do elemento a ser mapeado
      * @return o elemento mapeado
@@ -145,5 +147,13 @@ public class SeleniumRobot extends BaseTest {
      */
     public WebElement mapearElemento (String atributo, String especificacao, String valor){
         return webDriver.findElement(By.xpath("//"+atributo+"["+especificacao+"='"+valor+"']"));
+    }
+
+    /**
+     * Espera Implicita (OBS.: Evitar de usar esse tipo de espera)
+     * @param l quantidade em segundos
+     */
+    public void pausarAplicacao (long l){
+        webDriver.manage().timeouts().implicitlyWait(l, TimeUnit.SECONDS);
     }
 }

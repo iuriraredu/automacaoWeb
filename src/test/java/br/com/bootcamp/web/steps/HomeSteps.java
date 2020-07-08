@@ -14,8 +14,8 @@ public class HomeSteps {
         this.homeFuncionalidade = new HomeFuncionalidade();
     }
 
-    @E("^acesso perfil clicando em \"([^\"]*)\"$")
-    public void acessoPerfilClicandoEm(String texto) {
+    @E("^acesso perfil clicando no nome do usuário$")
+    public void acessoPerfilClicandoNoNomeDoUsuário() {
         this.homeFuncionalidade.acessarPerfil();
     }
 }

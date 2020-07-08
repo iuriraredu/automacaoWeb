@@ -10,7 +10,8 @@ public class HomePage {
         PageFactory.initElements(webDriver,this);
     }
 
-    @FindBy(xpath = "//span[parent::a[@href='/me/']]")
+    @FindBy (xpath = "//div[@data-click='profile_icon']")
+    //@FindBy(xpath = "//span[parent::a[@href='/me/']]")
     private WebElement linkMeuPerfil;
 
     public WebElement getLinkMeuPerfil() {

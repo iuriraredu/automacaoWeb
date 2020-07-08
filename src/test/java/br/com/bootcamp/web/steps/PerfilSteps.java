@@ -2,6 +2,7 @@ package br.com.bootcamp.web.steps;
 
 import br.com.bootcamp.web.funcionalidade.PerfilFuncionalidade;
 import cucumber.api.PendingException;
+import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
 
@@ -13,13 +14,19 @@ public class PerfilSteps {
         this.perfilFuncionalidade = new PerfilFuncionalidade();
     }
 
-    @Quando("^exclui publicação$")
-    public void excluiPublicação() {
+
+    @E("^clico em opções da postagem$")
+    public void clicoEmOpçõesDaPostagem() {
+        this.perfilFuncionalidade.clicoEmOpcPost();
+    }
+
+    @Quando("^clico em excluir postagem$")
+    public void clicoEmExcluirPostagem() {
         this.perfilFuncionalidade.excluiPublicacao();
     }
 
-    @Então("^exibe mensagem \"([^\"]*)\"$")
-    public void exibeMensagem(String texto) {
-        this.perfilFuncionalidade.confirmarExclusao(texto);
+    @Então("^confirmo a exclusão$")
+    public void confirmoAExclusão() {
+        this.perfilFuncionalidade.confirmarExclusao();
     }
 }

@@ -3,7 +3,6 @@ package br.com.bootcamp.web.funcionalidade;
 import br.com.bootcamp.commons.SeleniumRobot;
 import br.com.bootcamp.settings.BaseTest;
 import br.com.bootcamp.web.pages.PerfilPage;
-import org.openqa.selenium.WebDriver;
 
 public class PerfilFuncionalidade extends BaseTest {
     private PerfilPage perfilPage;
@@ -14,18 +13,18 @@ public class PerfilFuncionalidade extends BaseTest {
         this.seleniumRobot = new SeleniumRobot();
     }
 
-    public void excluiPublicacao() {
-        this.seleniumRobot.scrollAteOElementoJS(this.perfilPage.getBtnReticencias());
-        this.seleniumRobot.esperaElementoSerClicavelJS(this.perfilPage.getBtnReticencias());
-        this.perfilPage.getBtnReticencias().click();
-        this.seleniumRobot.esperaElementoSerClicavelJS(this.perfilPage.getBtnExcluirPublicaçao());
-        this.perfilPage.getBtnExcluirPublicaçao();
-        this.seleniumRobot.esperaElementoSerClicavelJS(this.perfilPage.getBtnConfirmaExclusao());
-        this.perfilPage.getBtnConfirmaExclusao();
+    public void clicoEmOpcPost(){
+        this.seleniumRobot.esperarElementoSerVisivel(this.perfilPage.getBtnReticencias());
+        this.seleniumRobot.clicaBotaoJS(this.perfilPage.getBtnReticencias());
     }
 
-    public void confirmarExclusao(String mensagem){
-        String atual = this.seleniumRobot.pegarValorTextoJS(this.perfilPage.getAvisoConfirmaExclusao());
-        this.seleniumRobot.validaTexto(atual,mensagem);
+    public void excluiPublicacao() {
+        this.seleniumRobot.pausarAplicacao(10);
+        this.seleniumRobot.clicaBotaoJS(this.perfilPage.getBtnExcluirPublicacao());
+    }
+
+    public void confirmarExclusao(){
+        this.seleniumRobot.pausarAplicacao(5);
+        this.seleniumRobot.clicaBotaoJS(this.perfilPage.getBtnConfirmaExclusao());
     }
 }

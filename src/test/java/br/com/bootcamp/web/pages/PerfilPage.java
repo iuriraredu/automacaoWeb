@@ -11,13 +11,16 @@ public class PerfilPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @FindBy(xpath = "//div[preceding-sibling::img[following-sibling:: div and ancestor:: div[@aria-posinset='1']]]")
+    @FindBy (xpath = "//a[@aria-label='Opções do story' and ancestor:: div[@data-insertion-position='0']]")
+    //@FindBy(xpath = "//div[img[following-sibling:: div and ancestor:: div[@aria-posinset='1']]]")
     WebElement btnReticencias;
 
-    @FindBy(xpath = "//span[text()='Excluir publicação']")
-    WebElement btnExcluirPublicaçao;
+    @FindBy(xpath = "//span[text()='Excluir']")
+    //@FindBy(xpath = "//div[span[text()='Excluir publicação']]")
+    WebElement btnExcluirPublicacao;
 
-    @FindBy(xpath = "//span[text()='Excluir' and parent:: div/parent:: div/parent:: div/parent:: div/parent:: div/parent:: div/preceding-sibling::div/descendant:: h2]")
+    @FindBy(xpath = "//button[text()='Excluir']")
+    //@FindBy(xpath = "//span[text()='Excluir' and parent:: div/parent:: div/parent:: div/parent:: div/parent:: div/parent:: div/preceding-sibling::div/descendant:: h2]")
     WebElement btnConfirmaExclusao;
 
     @FindBy(xpath = "//span[text()='Sua publicação foi excluída.']")
@@ -27,8 +30,8 @@ public class PerfilPage {
         return btnReticencias;
     }
 
-    public WebElement getBtnExcluirPublicaçao() {
-        return btnExcluirPublicaçao;
+    public WebElement getBtnExcluirPublicacao() {
+        return btnExcluirPublicacao;
     }
 
     public WebElement getBtnConfirmaExclusao() {
